@@ -1,0 +1,227 @@
+:root {
+  --primary: #ff6b6b;
+  --bg: #f6f7fb;
+  --panel: #ffffff;
+  --border: #e6e8ef;
+  --text: #111827;
+  --shadow: 0 10px 30px rgba(30,41,59,.08);
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Top bar */
+.top {
+  display: flex;
+  justify-content: center; /* Center the top-wrapper */
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+  width: 100%;
+  padding: 0; /* Removed fixed padding here, moved to .top-wrapper */
+}
+.top-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px; /* Adjusted padding to match shell's horizontal padding */
+  max-width: 1200px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.top .brand, .top .search-wrapper {
+  /* Moved logic for alignment and max-width into top-wrapper */
+  margin: 0;
+  padding: 0;
+  width: auto;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  font-size: 18px; /* Adjusted font size for brand title */
+}
+.logo {
+  display: none; /* Hide the logo for visual parity with reference */
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: #eef2ff;
+  object-fit: cover;
+}
+.chip {
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #fff;
+  font-size: 12px;
+  cursor: pointer;
+}
+.chip.is-active {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* Layout */
+.shell {
+  display: block;
+  padding: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.content {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 20px; /* Increased padding to match reference */
+}
+h1 {
+  font-size: 28px; /* Adjusted font size for guide title */
+  margin-top: 0; /* Remove default top margin */
+  margin-bottom: 20px; /* Add bottom margin for spacing */
+  text-align: center; /* Center the title as seen in reference */
+}
+.content-top {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 14px 0 20px; /* Adjusted padding */
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 20px; /* Add margin below content-top */
+}
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: #eee;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.search {
+  flex-grow: 1;
+}
+.search input {
+  width: 100%;
+  height: 48px; /* Set a fixed height for search input */
+  padding: 0 18px; /* Adjusted padding */
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: #f2f4f8;
+  box-sizing: border-box;
+  font-size: 16px; /* Adjusted font size */
+}
+.share {
+  border: 1px solid var(--border);
+  border-radius: 999px; /* Changed to fully rounded */
+  background: #fff;
+  padding: 12px 18px; /* Adjusted padding */
+  cursor: pointer;
+  flex-shrink: 0;
+  font-size: 14px; /* Adjusted font size */
+  font-weight: 600; /* Added font weight */
+}
+
+/* Grid of cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Responsive grid */
+  gap: 16px;
+  padding: 16px 0; /* Adjusted padding */
+}
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.02);
+  display: flex;
+  flex-direction: column; /* Stack emoji and title vertically */
+  align-items: center;
+  justify-content: center;
+  min-height: 120px; /* Increased min-height for cards */
+  cursor: pointer;
+  text-align: center; /* Center text within card */
+}
+.card:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+}
+.card .ico {
+  font-size: 36px; /* Increased emoji size */
+  margin-bottom: 8px; /* Space between emoji and title */
+}
+.card .ttl {
+  font-weight: 700;
+  font-size: 16px; /* Adjusted title font size */
+}
+
+/* Bottom nav */
+.bottom {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 16px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 18px; /* Ensure rounded corners */
+  display: flex;
+  gap: 24px;
+  padding: 12px 22px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+  width: calc(100% - 32px); /* Account for overall shell padding */
+  max-width: calc(1200px - 32px); /* Constrain max width for centering */
+  box-sizing: border-box; /* Include padding in width calculation */
+  justify-content: space-around; /* Distribute items evenly if multiple tabs */
+}
+.bottom .tab {
+  background: transparent;
+  border: 0;
+  color: #fff;
+  font-weight: 600;
+  opacity: .9;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.bottom .tab.is-active {
+  opacity: 1;
+}
+.bottom-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 16px; /* Match shell padding */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+/* Mobile layout */
+@media (max-width: 900px) {
+  .shell {
+    grid-template-columns: 1fr;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
