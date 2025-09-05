@@ -14,7 +14,34 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 </head>
 <body>
-...
+  <!-- Top bar -->
+  <header class="top">
+    <div class="brand">
+      <img id="brandLogo" class="logo" alt="Logo" />
+      <span id="brandName">Guide</span>
+    </div>
+    <div class="top-actions">
+      <div class="device-toggle">
+        <button class="chip is-active" data-mode="desktop">Desktop</button>
+        <button class="chip" data-mode="mobile">Mobile</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main shell -->
+  <main class="shell">
+    <aside class="left"></aside>
+
+    <section class="content">
+      <div class="content-top">
+        <div class="avatar"><img id="hostAvatar" alt="" /></div>
+        <div class="search"><input id="search" type="search" placeholder="Search here" /></div>
+        <button class="share" id="shareBtn" title="Share">⤴</button>
+      </div>
+
+      <!-- Grid of page cards -->
+      <div id="grid" class="grid"></div>
+    </section>
   </main>
 
   <!-- Bottom nav (visual) -->
