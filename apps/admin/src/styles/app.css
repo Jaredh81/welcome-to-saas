@@ -1,0 +1,311 @@
+:root {
+  --primary: #ff6b6b;
+  --bg: #f6f7fb;
+  --panel: #ffffff;
+  --border: #e6e8ef;
+  --text: #111827;
+  --shadow: 0 10px 30px rgba(30,41,59,.08);
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Top bar */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+}
+.logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: #eef2ff;
+  display: none;
+  object-fit: cover;
+}
+.chip {
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #fff;
+  font-size: 12px;
+  cursor: pointer;
+}
+.chip.is-active {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* Layout */
+.shell {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 16px;
+  padding: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.content {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 12px;
+}
+.content-top {
+  display: grid;
+  grid-template-columns: 60px 1fr 60px;
+  gap: 10px;
+  align-items: center;
+  padding: 6px 6px 14px;
+  border-bottom: 1px solid var(--border);
+}
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: #eee;
+  display: grid;
+  place-items: center;
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.search input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: #f2f4f8;
+}
+.share {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+/* Grid of cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: 16px 4px;
+}
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.02);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+  min-height: 90px;
+}
+.card .ico {
+  font-size: 22px;
+}
+.card .ttl {
+  font-weight: 700;
+}
+
+/* Bottom nav */
+.bottom {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 16px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 18px;
+  display: flex;
+  gap: 24px;
+  padding: 12px 22px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+}
+.bottom .tab {
+  background: transparent;
+  border: 0;
+  color: #fff;
+  font-weight: 600;
+  opacity: .9;
+  cursor: pointer;
+}
+.bottom .tab.is-active {
+  opacity: 1;
+}
+
+/* Basic Form Styling for Admin Auth */
+.row {
+  display: flex;
+}
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+.flex-column {
+  flex-direction: column;
+}
+.col-6 {
+  width: 100%;
+  max-width: 400px; /* Limit width for form */
+}
+.form-widget {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: 20px;
+  margin-top: 50px; /* Space from top */
+}
+.header {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.description {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.inputField {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.button {
+  background-color: var(--primary);
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+}
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.button.block {
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+
+/* Account Page Specific Styles */
+.account-wrapper {
+  display: grid;
+  place-items: start;
+  padding: 16px;
+}
+
+.account-card {
+  max-width: 360px;
+  width: 100%;
+  margin: 24px auto;
+  background: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(31,41,59,.08);
+}
+
+.account-email-info {
+  font-size: 14px;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.account-signout-button {
+  width: 100%;
+  background: #ff6b6b;
+  color: #fff;
+  border: 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.account-section-header {
+  margin: 12px 0 8px;
+}
+
+.account-input-field {
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+}
+
+.account-create-button {
+  width: 100%;
+  background: #ff6b6b;
+  color: #fff;
+  border: 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.account-create-button:disabled {
+  background: #fca5a5;
+  cursor: not-allowed;
+}
+
+.account-loading {
+  opacity: 0.7;
+}
+
+.account-no-items {
+  opacity: 0.8;
+}
+
+.account-list {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.account-error-message {
+  margin-top: 12px;
+  color: #b91c1c;
+  font-size: 13px;
+}
+
+
+/* Mobile layout */
+@media (max-width: 900px) {
+  .shell {
+    grid-template-columns: 1fr;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+} 
